@@ -11,12 +11,12 @@
             src="../../assets/img/cards/{{ copyCard }}.png">
 
         <!--currentCard animation-->
-        <img (click)="pickCard()" *ngIf="pickCardAnimation" class="picked-card" style="right:40px"
-            src="../../assets/img/cards/{{currentCard}}.png">
+        <img (click)="pickCard()" *ngIf="game.pickCardAnimation" class="picked-card" style="right:40px"
+            src="../../assets/img/cards/{{game.currentCard}}.png">
     </div>
 </div>
 
-<app-app-info class="info-card" [card]="currentCard"></app-app-info>
+<app-app-info class="info-card" [card]="game.currentCard"></app-app-info>
 
 
 <button mat-fab color="primary" class="btn-add"

@@ -16,6 +16,9 @@ import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { AppInfoComponent } from './app-info/app-info.component';
 import {MatCardModule} from '@angular/material/card';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environments';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,8 @@ import {MatCardModule} from '@angular/material/card';
     FormsModule,
     MatInputModule,
     MatCardModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent]
