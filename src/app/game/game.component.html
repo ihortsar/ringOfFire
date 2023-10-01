@@ -1,5 +1,13 @@
 <app-players *ngFor="let player of game.players; let i=index;" [ngStyle]="{'top.px':130 + (i*140)}"
-    [nameOfPlayer]="player" class="playerPosition" [playerActive]="i==game.currentPlayer"></app-players>
+    [nameOfPlayer]="player" class="playerPosition  hide-mobile" [playerActive]="i==game.currentPlayer"></app-players>
+
+<div class="scrollable hide-desktop">
+    <app-player-mobile *ngFor="let player of game.players; let i=index;" 
+        [nameOfPlayer]="player"
+        [playerActive]="i==game.currentPlayer"></app-player-mobile>
+</div>
+
+
 <div class="field">
     <div class="card-stack">
         <img [ngStyle]="{'right.px':i*5}" *ngFor="let card of [0,1,2,3,4]; let i=index;"
@@ -19,7 +27,6 @@
 <app-app-info class="info-card" [card]="game.currentCard"></app-app-info>
 
 
-<button mat-fab color="primary" class="btn-add"
-(click)="openDialog()">
+<button mat-fab color="primary" class="btn-add" (click)="openDialog()">
     <mat-icon>add</mat-icon>
 </button>

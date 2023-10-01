@@ -36,6 +36,13 @@
 .playedCard {
     right: 40px;
     transform: scale(1.7) translateX(140px) translateY(-130px) rotate(30deg);
+
+    @media (max-width:920px) {
+        right: 40px;
+        transform: scale(1.7) translateX(104px) translateY(-89px) rotate(30deg);
+        height: 102px;
+        width: auto !important;
+    }
 }
 
 @keyframes pick-card-animation {
@@ -58,19 +65,53 @@
 
 }
 
+
+
 .playerPosition {
     position: absolute;
-    right: 0
+    right: 0;
+
 }
 
-.btn-add{
+.btn-add {
     position: absolute;
-    right:32px;
-    bottom:32px
+    right: 32px;
+    bottom: 32px;
+
+    @media (max-width:920px) {
+        right: 13px;
+        bottom: 119px;
+    }
 }
-.info-card{
+
+.info-card {
     position: absolute;
-    bottom:32px;
-    left:200px;
-    right:200px;
+    bottom: 32px;
+    left: 200px;
+    right: 200px;
+
+    @media (max-width:920px) {
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+    }
+
+
+}
+
+
+@media (max-width:920px) {
+    .scrollable {
+        display: flex;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 40px;
+
+    }
+
 }
